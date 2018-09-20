@@ -45,22 +45,25 @@ public class InstrumentController
 		}
 		
 		
+		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?");
 		boolean hasEndPin = false;
 		hasEndPin = Boolean.parseBoolean(userInput);
 		userInstrument.setHasEndPin(hasEndPin);
 		JOptionPane.showMessageDialog(null, "It is " + userInstrument.getHasEndPin() 
 						+ " that your instrument has an end pin."); 
+		
 	
 		
 		//instrumentType depends on what highestStringPitch is
 		userInput = JOptionPane.showInputDialog(null, "What is the pitch name of your instrument's highest string?");
 		String highestStringPitch = userInput;
 		userInstrument.setHighestStringPitch(highestStringPitch);
-		
+		boolean isCelloOrBass = userInstrument.getHasEndPin();
+		//isCellorOrBass = userInstrument.getHasEndPin();
 		if (highestStringPitch.equalsIgnoreCase("A"))
 		{
-			if (userInstrument.getHasEndPin() = false)
+			if (isCelloOrBass = false)
 			{
 				userInstrument.setInstrumentType("viola");
 			}
