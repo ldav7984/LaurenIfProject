@@ -46,6 +46,7 @@ public class InstrumentController
 		
 		
 		
+		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?");
 		boolean hasEndPin = false;
 		hasEndPin = Boolean.parseBoolean(userInput);
