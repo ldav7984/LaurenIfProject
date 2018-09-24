@@ -12,12 +12,14 @@ public class InstrumentController
 	private Instrument userInstrument;
 	
 	
-	//make one constructor with zero parameters, one with at least one
 	
+	//constructors
 	public InstrumentController()
 	{
-		myInstrument = new Instrument(4, "E", false, "violin"); //put my parameters in here
-		userInstrument = new Instrument();
+		myInstrument = new Instrument(4, "E", false, "violin"); 
+		//put this constructor's parameters in the parenthesis
+		userInstrument = new Instrument(); 
+		//constructor with no parameters
 	}
 	
 	public void Start()
@@ -86,8 +88,6 @@ public class InstrumentController
 			userInstrument.setInstrumentType("unknown");
 			JOptionPane.showMessageDialog(null, "Your instrument is sure unusual!");
 		}
-		
-		
 		
 		
 		
