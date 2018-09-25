@@ -62,7 +62,8 @@ public class InstrumentController
 		userInput = JOptionPane.showInputDialog(null, "What is the pitch name of your instrument's highest string?");
 		String highestStringPitch = userInput;
 		userInstrument.setHighestStringPitch(highestStringPitch);
-		boolean isCelloOrBass = userInstrument.getHasEndPin();
+		boolean isCelloOrBass = false; //default value
+		isCelloOrBass = userInstrument.getHasEndPin();
 		//isCellorOrBass = userInstrument.getHasEndPin();
 		if (highestStringPitch.equalsIgnoreCase("A"))
 		{
@@ -92,10 +93,29 @@ public class InstrumentController
 		
 		
 		JOptionPane.showMessageDialog(null, userInstrument);
+	} //end of Start() method
+	
+	//test the code
+	private void loopy()
+	{
+		//define a variable before the loop
+		boolean isFinished = false;
+		int someCount = 0;
+		while (!isFinished) // "while not isFinished" (while not false) 
+		{
+			//code
+			JOptionPane.showMessageDialog(null, "Annoy everyone!");
+			someCount += 1;
+			someCount ++; 
+			
+			if (someCount > 10)
+			{
+				isFinished = true; //ends the loop after one run
+			}
+		}
+		
+		
 	}
-	
-	
-	
 	
 	
 	

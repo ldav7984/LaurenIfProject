@@ -1,6 +1,6 @@
 package model;
 
-public class Instrument
+public class Instrument //model
 {
 	private int numStrings;
 	private String highestStringPitch;
@@ -80,10 +80,10 @@ public class Instrument
 	
 	public String toString() //lets us print out information about any object
 	{
-		String description = "This instrument has " + numStrings + " strings."
-				+"The pitch of its highest string is " + highestStringPitch + "."
-				+ "It is " + hasEndPin + " that it has an end pin."
-				+ "It is a " + instrumentType + ".";
+		String description = "This instrument has " + numStrings + " strings. "
+				+"The pitch of its highest string is " + highestStringPitch + ". "
+				+ "It is " + hasEndPin + " that it has an end pin. "
+				+ "It must be a " + instrumentType + ". ";
 		return description;
 	}
 	
