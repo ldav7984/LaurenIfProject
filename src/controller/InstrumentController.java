@@ -26,6 +26,7 @@ public class InstrumentController
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		
+		loopy();
 		
 		
 		String userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
@@ -38,18 +39,19 @@ public class InstrumentController
 		if (numStrings == 4)
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings()
-					+ "strings. It probably belongs in a string orchestra!" );
+					+ " strings. It probably belongs in a string orchestra!" );
 		}
 		else
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings() 
-					+ "strings. It is not a typical string orchestra instrument.");
+					+ " strings. It is not a typical string orchestra instrument.");
 		}
 		
 		
 		
 		
-		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?");
+		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
+				+ " (True/False)");
 		boolean hasEndPin = false;
 		hasEndPin = Boolean.parseBoolean(userInput);
 		userInstrument.setHasEndPin(hasEndPin);
@@ -65,7 +67,12 @@ public class InstrumentController
 		boolean isCelloOrBass = false; //default value
 		isCelloOrBass = userInstrument.getHasEndPin();
 		//isCellorOrBass = userInstrument.getHasEndPin();
-		if (highestStringPitch.equalsIgnoreCase("A"))
+		if (userInstrument.getNumStrings() != 4)
+		{
+			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
+			JOptionPane.showMessageDialog(null, "Your instrument is sure unusual!");
+		}
+		else if (highestStringPitch.equalsIgnoreCase("A"))
 		{
 			if (isCelloOrBass = false)
 			{
@@ -86,7 +93,7 @@ public class InstrumentController
 		}
 		else
 		{
-			userInstrument.setInstrumentType("unknown");
+			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
 			JOptionPane.showMessageDialog(null, "Your instrument is sure unusual!");
 		}
 		
@@ -103,18 +110,18 @@ public class InstrumentController
 		int someCount = 0;
 		while (!isFinished) // "while not isFinished" (while not false) 
 		{
-			//code
-			JOptionPane.showMessageDialog(null, "Annoy everyone!");
+			
+			JOptionPane.showMessageDialog(null, "Yay orchestra!");
 			someCount += 1;
 			someCount ++; 
 			
-			if (someCount > 10)
+			if (someCount > 4)
 			{
 				isFinished = true; //ends the loop after one run
 			}
 		}
 		
-		
+			
 	}
 	
 	
