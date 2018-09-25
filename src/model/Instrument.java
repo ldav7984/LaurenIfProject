@@ -83,7 +83,7 @@ public class Instrument //model
 		String description = "This instrument has " + numStrings + " strings. "
 				+"The pitch of its highest string is " + highestStringPitch + ". "
 				+ "It is " + hasEndPin + " that it has an end pin. "
-				+ "It must be a " + instrumentType + ". ";
+				+ "It must be a" + instrumentType + ". ";
 		return description;
 	}
 	

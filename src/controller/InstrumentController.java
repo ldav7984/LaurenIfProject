@@ -10,18 +10,15 @@ public class InstrumentController
 	//private declaration section
 	private Instrument myInstrument;
 	private Instrument userInstrument;
-	private Instrument whileInstrument;
-	
-	
+
 	
 	//constructors
 	public InstrumentController()
 	{
-		myInstrument = new Instrument(4, "E", false, "violin"); 
+		myInstrument = new Instrument(4, "E", false, " violin"); 
 		//put this constructor's parameters in the parenthesis
 		userInstrument = new Instrument(); 
 		//constructor with no parameters
-		Instrument whileInstrument = new Instrument(); //just for practicing the while() loop
 	}
 	
 	public void Start()
@@ -31,13 +28,18 @@ public class InstrumentController
 		
 		
 		String userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
-		int numStrings = 0;
-		if(validInt(userInput))
+		int numStrings = 0; //default value
+		//if(validInt(userInput))
+		//{
+		//	numStrings = Integer.parseInt(userInput);
+		//}
+		//userInstrument.setNumStrings(numStrings);
+		while(!validInt(userInput))
 		{
-			numStrings = Integer.parseInt(userInput);
+			userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		}
-		userInstrument.setNumStrings(numStrings);
-		if (numStrings == 4)
+		userInstrument.setNumStrings(Integer.parseInt(userInput)); 
+		if (userInstrument.getNumStrings() == 4)
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings()
 					+ " strings. It probably belongs in a string orchestra!" );
@@ -47,8 +49,6 @@ public class InstrumentController
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings() 
 					+ " strings. It is not a typical string orchestra instrument.");
 		}
-		
-		
 		
 		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
@@ -76,22 +76,22 @@ public class InstrumentController
 		}
 		else if (highestStringPitch.equalsIgnoreCase("A"))
 		{
-			if (isCelloOrBass = false)
+			if (isCelloOrBass) 
 			{
-				userInstrument.setInstrumentType("viola");
+				userInstrument.setInstrumentType(" cello");
 			}
 			else 
 			{
-				userInstrument.setInstrumentType("cello");
+				userInstrument.setInstrumentType(" viola");
 			}
 		}
 		else if (highestStringPitch.equalsIgnoreCase("E"))
 		{
-			userInstrument.setInstrumentType("violin");
+			userInstrument.setInstrumentType(" violin");
 		}
 		else if (highestStringPitch.equalsIgnoreCase("G"))
 		{
-			userInstrument.setInstrumentType("bass");
+			userInstrument.setInstrumentType("n upright bass");
 		}
 		else
 		{
@@ -117,17 +117,17 @@ public class InstrumentController
 			someCount += 1;
 			someCount ++; 
 			
-			if (someCount > 4)
+			if (someCount > 3)
 			{
 				isFinished = true; //ends the loop after one run
 			}
 		}
-		String response = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
-		while(!validInt(response))
-		{
-			response = JOptionPane.showInputDialog(null, "Type in a whole number!");
-		}
-		whileInstrument.setNumStrings(Integer.parseInt(response));
+		
+		//for (int index = 0; index < 10; index++) //starting value, condition, change
+		//{
+		//	JOptionPane.showMessageDialog(null, "This is execution number " + index);
+		//}
+		
 	} //end of loopy() method
 	
 	
