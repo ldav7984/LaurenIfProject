@@ -90,13 +90,13 @@ public class InstrumentController
 				userInstrument.setInstrumentType(" viola");
 			}
 		}
-		else if (highestStringPitch.equalsIgnoreCase("E"))
+		else if (highestStringPitch.equalsIgnoreCase("E") && isCelloOrBass == false)
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ".");
 			userInstrument.setInstrumentType(" violin");
 		}
-		else if (highestStringPitch.equalsIgnoreCase("G"))
+		else if (highestStringPitch.equalsIgnoreCase("G") && isCelloOrBass)
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ".");
