@@ -34,17 +34,17 @@ public class InstrumentController
 		//	numStrings = Integer.parseInt(userInput);
 		//}
 		//userInstrument.setNumStrings(numStrings);
-		while(!validInt(userInput))
+		while(!validInt(userInput)) //if the user does not type in an integer
 		{
 			userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		}
-		userInstrument.setNumStrings(Integer.parseInt(userInput)); 
-		if (userInstrument.getNumStrings() == 4)
+		userInstrument.setNumStrings(Integer.parseInt(userInput)); //if input is an integer set it to the new numStrings count
+		if (userInstrument.getNumStrings() == 4) //if it has 4 strings
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings()
 					+ " strings. It probably belongs in a string orchestra!" );
 		}
-		else
+		else //if it doesn't have 4 strings
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings() 
 					+ " strings. It is not a typical string orchestra instrument.");
@@ -69,7 +69,7 @@ public class InstrumentController
 		boolean isCelloOrBass = false; //default value
 		isCelloOrBass = userInstrument.getHasEndPin();
 		//isCellorOrBass = userInstrument.getHasEndPin();
-		if (userInstrument.getNumStrings() != 4)
+		if (userInstrument.getNumStrings() != 4) //if it does not have 4 strings
 		{
 			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
@@ -77,26 +77,26 @@ public class InstrumentController
 		}
 		else if (highestStringPitch.equalsIgnoreCase("A"))
 		{
-			if (isCelloOrBass) 
+			if (isCelloOrBass) //if its highest string is A and it is a cello or bass it must be a cello
 			{
 				JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 						+ userInstrument.getHighestStringPitch() + ".");
 				userInstrument.setInstrumentType(" cello");
 			}
-			else 
+			else //if its highest string is A and it is not a cello or bass it must be a viola
 			{
 				JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 						+ userInstrument.getHighestStringPitch() + ".");
 				userInstrument.setInstrumentType(" viola");
 			}
 		}
-		else if (highestStringPitch.equalsIgnoreCase("E") && isCelloOrBass == false)
+		else if (highestStringPitch.equalsIgnoreCase("E") && isCelloOrBass == false) //if the highest string is E and it is not a cellor or bass
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ".");
 			userInstrument.setInstrumentType(" violin");
 		}
-		else if (highestStringPitch.equalsIgnoreCase("G") && isCelloOrBass)
+		else if (highestStringPitch.equalsIgnoreCase("G") && isCelloOrBass) //if the highest string is G and it is a cello or bass
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ".");
