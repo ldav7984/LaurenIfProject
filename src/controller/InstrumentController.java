@@ -72,31 +72,41 @@ public class InstrumentController
 		if (userInstrument.getNumStrings() != 4)
 		{
 			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
-			JOptionPane.showMessageDialog(null, "Your instrument is sure unusual!");
+			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
+											+ userInstrument.getHighestStringPitch() + ". Your instrument is sure unusual!");
 		}
 		else if (highestStringPitch.equalsIgnoreCase("A"))
 		{
 			if (isCelloOrBass) 
 			{
+				JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
+						+ userInstrument.getHighestStringPitch() + ".");
 				userInstrument.setInstrumentType(" cello");
 			}
 			else 
 			{
+				JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
+						+ userInstrument.getHighestStringPitch() + ".");
 				userInstrument.setInstrumentType(" viola");
 			}
 		}
 		else if (highestStringPitch.equalsIgnoreCase("E"))
 		{
+			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
+					+ userInstrument.getHighestStringPitch() + ".");
 			userInstrument.setInstrumentType(" violin");
 		}
 		else if (highestStringPitch.equalsIgnoreCase("G"))
 		{
+			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
+					+ userInstrument.getHighestStringPitch() + ".");
 			userInstrument.setInstrumentType("n upright bass");
 		}
 		else
 		{
 			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
-			JOptionPane.showMessageDialog(null, "Your instrument is sure unusual!");
+			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
+					+ userInstrument.getHighestStringPitch() + ". Your instrument is sure unusual!");
 		}
 		
 		
