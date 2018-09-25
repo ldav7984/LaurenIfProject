@@ -10,6 +10,7 @@ public class InstrumentController
 	//private declaration section
 	private Instrument myInstrument;
 	private Instrument userInstrument;
+	private Instrument whileInstrument;
 	
 	
 	
@@ -20,12 +21,12 @@ public class InstrumentController
 		//put this constructor's parameters in the parenthesis
 		userInstrument = new Instrument(); 
 		//constructor with no parameters
+		Instrument whileInstrument = new Instrument(); //just for practicing the while() loop
 	}
 	
 	public void Start()
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
-		
 		loopy();
 		
 		
@@ -52,7 +53,8 @@ public class InstrumentController
 		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
 				+ " (True/False)");
-		boolean hasEndPin = false;
+		boolean hasEndPin = false; //default value
+		
 		hasEndPin = Boolean.parseBoolean(userInput);
 		userInstrument.setHasEndPin(hasEndPin);
 		JOptionPane.showMessageDialog(null, "It is " + userInstrument.getHasEndPin() 
@@ -120,9 +122,13 @@ public class InstrumentController
 				isFinished = true; //ends the loop after one run
 			}
 		}
-		
-			
-	}
+		String response = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
+		while(!validInt(response))
+		{
+			response = JOptionPane.showInputDialog(null, "Type in a whole number!");
+		}
+		whileInstrument.setNumStrings(Integer.parseInt(response));
+	} //end of loopy() method
 	
 	
 	
