@@ -126,7 +126,7 @@ public class InstrumentController
 	//test the code
 	private void LoopyLoop()
 	{
-		for (int instrumentsMade = 1; instrumentsMade <= 3; instrumentsMade ++)
+		for (int instrumentsMade = 1; instrumentsMade <= 4; instrumentsMade ++)
 		{
 			askUser();
 			JOptionPane.showMessageDialog(null, userInstrument);
@@ -138,21 +138,12 @@ public class InstrumentController
 			{
 				JOptionPane.showMessageDialog(null, "You've now made " + instrumentsMade + " instruments.");
 			}
-			
 		}
 		
-		
-		
-		//for (int index = 0; index < 10; index++) //starting value, condition, change
-		//{
-		//	JOptionPane.showMessageDialog(null, "This is execution number " + index);
-		//}
-		
-	} //end of loopy() method
+	} //end of LoopyLoop() method
 	
 	
-	//Method to call on when user needs to input an int
-	//It makes sure the user inputs an int
+	//validation  to call on when user needs to input an integer
 	public boolean validInt (String maybeInt) 
 	{
 		boolean isValid = false; //default value
@@ -168,4 +159,4 @@ public class InstrumentController
 		return isValid;
 	}
 	
-}
+}//end of InstrumentController class
