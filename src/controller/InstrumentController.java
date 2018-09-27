@@ -38,7 +38,8 @@ public class InstrumentController
 		//	numStrings = Integer.parseInt(userInput);
 		//}
 		//userInstrument.setNumStrings(numStrings);
-		while(!validInt(userInput)) //every time the user does not type in an integer
+		while(userInput == null || !validInt(userInput) || userInput.equals("")) 
+		//every time the user does not type anything at all or a valid integer or presses cancel
 		{
 			userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		}
@@ -59,6 +60,11 @@ public class InstrumentController
 		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
 				+ " (True/False)");
+		while (userInput == null || !userInput.equalsIgnoreCase("True") || !userInput.equalsIgnoreCase("False"));
+		{
+			userInput = JOptionPane.showInputDialog(null, "Type in 'true' or 'false.' "
+							+ "\nDoes your instrument have an end pin?");
+		}
 		boolean hasEndPin = false; //default value
 		hasEndPin = Boolean.parseBoolean(userInput);
 		userInstrument.setHasEndPin(hasEndPin);
@@ -77,6 +83,11 @@ public class InstrumentController
 		userInstrument.setHighestStringPitch(highestStringPitch);
 		boolean isCelloOrBass = false; //default value
 		isCelloOrBass = userInstrument.getHasEndPin();
+		while (userInput == null || userInput.equals(""))
+		{
+			userInput = JOptionPane.showInputDialog(null, "Type in something and don't press cancel." 
+					+ " What is the pitch name of your instrument's highest string?");
+		}
 		if (userInstrument.getNumStrings() != 4) //if it does not have 4 strings
 		{
 			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
@@ -155,7 +166,7 @@ public class InstrumentController
 		}
 		catch (NumberFormatException error) //if it can't parse, it allows user to try again
 		{
-			JOptionPane.showMessageDialog(null, "You need to type in a whole number :)");
+			JOptionPane.showMessageDialog(null, "You need to type in a whole number and don't press cancel :)");
 		}
 		return isValid;
 	}
