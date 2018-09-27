@@ -6,11 +6,11 @@ import javax.swing.JOptionPane;
 
 public class InstrumentController
 {
-
 	//private declaration section
-	private Instrument myInstrument;
-	private Instrument userInstrument;
-
+	private Instrument myInstrument; 
+	//instrument built by my parameters as an example/default
+	private Instrument userInstrument; 
+	//instrument built by user input
 	
 	//constructors
 	public InstrumentController()
@@ -18,7 +18,7 @@ public class InstrumentController
 		myInstrument = new Instrument(4, "E", false, " violin"); 
 		//put this constructor's parameters in the parenthesis
 		userInstrument = new Instrument(); 
-		//constructor with no parameters
+		//this constructor has no parameters
 		//parameters later filled with user input
 	}
 	
@@ -149,10 +149,10 @@ public class InstrumentController
 		boolean isValid = false; //default value
 		try
 		{
-			Integer.parseInt(maybeInt);
+			Integer.parseInt(maybeInt); //try to parse the input into an integer
 			isValid = true;
 		}
-		catch (NumberFormatException error)
+		catch (NumberFormatException error) //if it can't parse it allows user to try again
 		{
 			JOptionPane.showMessageDialog(null, "You need to type in a whole number :)");
 		}
