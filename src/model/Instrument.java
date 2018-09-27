@@ -15,11 +15,10 @@ public class Instrument //model
 	 */
 	public Instrument()
 	{
-		this.numStrings = 0;
-		this.highestStringPitch = "A";
+		this.numStrings = 4;
+		this.highestStringPitch = "E";
 		this.hasEndPin = false;
 		this.instrumentType = "violin";
-		
 	}
 	
 	/**
