@@ -81,9 +81,9 @@ public class Instrument //model
 	public String toString() //lets us print out information about any object
 	{
 		String description = "This instrument has " + numStrings + " strings. "
-				+"The pitch of its highest string is " + highestStringPitch + ". "
-				+ "It is " + hasEndPin + " that it has an end pin. "
-				+ "It must be a" + instrumentType + ". ";
+				+ "\nThe pitch of its highest string is " + highestStringPitch + ". "
+				+ "\nIt is " + hasEndPin + " that it has an end pin. "
+				+ "\nIt must be a" + instrumentType + ". ";
 		return description;
 	}
 	

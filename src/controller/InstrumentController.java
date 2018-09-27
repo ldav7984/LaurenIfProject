@@ -43,12 +43,12 @@ public class InstrumentController
 		if (userInstrument.getNumStrings() == 4) //if it has 4 strings
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings()
-					+ " strings. It probably belongs in a string orchestra!" );
+					+ " strings. \nIt probably belongs in a string orchestra!" );
 		}
 		else //if it doesn't have 4 strings
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings() 
-					+ " strings. It is not a typical string orchestra instrument.");
+					+ " strings. \nIt is not a typical string orchestra instrument.");
 		}
 		
 		
@@ -65,7 +65,7 @@ public class InstrumentController
 		//instrumentType depends on what highestStringPitch is 
 		//and if it doesn't have 4 strings it defaults to unknown
 		userInput = JOptionPane.showInputDialog(null, "What is the pitch name of your instrument's highest string?"
-				+ " (Most likely A, E, or G)");
+				+ "\n(Most likely A, E, or G)");
 		String highestStringPitch = userInput;
 		userInstrument.setHighestStringPitch(highestStringPitch);
 		boolean isCelloOrBass = false; //default value
@@ -74,7 +74,7 @@ public class InstrumentController
 		{
 			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
-											+ userInstrument.getHighestStringPitch() + ". Your instrument is sure unusual!");
+											+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
 		}
 		else if (highestStringPitch.equalsIgnoreCase("A"))
 		{
@@ -107,7 +107,7 @@ public class InstrumentController
 		{
 			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
-					+ userInstrument.getHighestStringPitch() + ". Your instrument is sure unusual!");
+					+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
 		}
 		
 		
@@ -154,7 +154,7 @@ public class InstrumentController
 		}
 		catch (NumberFormatException error)
 		{
-			JOptionPane.showMessageDialog(null, "You need to type in a whole number.");
+			JOptionPane.showMessageDialog(null, "You need to type in a whole number :)");
 		}
 		return isValid;
 	}
