@@ -60,11 +60,11 @@ public class InstrumentController
 		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
 				+ " (True/False)");
-		while (userInput == null || !userInput.equalsIgnoreCase("True") || !userInput.equalsIgnoreCase("False"));
-		{
-			userInput = JOptionPane.showInputDialog(null, "Type in 'true' or 'false.' "
-							+ "\nDoes your instrument have an end pin?");
-		}
+		//while (userInput == null || !userInput.equalsIgnoreCase("True") || !userInput.equalsIgnoreCase("False"));
+		//{
+		//	userInput = JOptionPane.showInputDialog(null, "Type in 'true' or 'false.' "
+		//					+ "\nDoes your instrument have an end pin?");
+		//}
 		boolean hasEndPin = false; //default value
 		hasEndPin = Boolean.parseBoolean(userInput);
 		userInstrument.setHasEndPin(hasEndPin);
