@@ -26,8 +26,12 @@ public class InstrumentController
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		LoopyLoop();
-		
-		
+		//askUser();
+		//JOptionPane.showMessageDialog(null, userInstrument);
+	} //end of Start() method
+	
+	public void askUser()
+	{
 		String userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		//int numStrings = 0; //default value
 		//if(validInt(userInput))
@@ -52,6 +56,8 @@ public class InstrumentController
 		}
 		
 		
+		
+		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
 				+ " (True/False)");
 		boolean hasEndPin = false; //default value
@@ -62,10 +68,13 @@ public class InstrumentController
 						+ " that your instrument has an end pin."); 
 		
 		
+		
+		
+		
 		//instrumentType depends on what highestStringPitch is 
 		//and if it doesn't have 4 strings it defaults to unknown
 		userInput = JOptionPane.showInputDialog(null, "What is the pitch name of your instrument's highest string?"
-				+ "\n(Most likely A, E, or G)");
+						+ "\n(Most likely A, E, or G)");
 		String highestStringPitch = userInput;
 		userInstrument.setHighestStringPitch(highestStringPitch);
 		boolean isCelloOrBass = false; //default value
@@ -74,7 +83,7 @@ public class InstrumentController
 		{
 			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
-											+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
+					+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
 		}
 		else if (highestStringPitch.equalsIgnoreCase("A"))
 		{
@@ -109,30 +118,30 @@ public class InstrumentController
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
 		}
-		
-		
-		
-		JOptionPane.showMessageDialog(null, userInstrument);
-	} //end of Start() method
+
+	}//end of askUser() loop
+	
+	
 	
 	//test the code
 	private void LoopyLoop()
 	{
-		//define a variable before the loop
-		boolean isFinished = false;
-		int someCount = 0;
-		while (!isFinished) // "while not isFinished" (while not false) 
+		for (int instrumentsMade = 1; instrumentsMade <= 3; instrumentsMade ++)
 		{
-			
-			JOptionPane.showMessageDialog(null, "Yay orchestra!");
-			someCount += 1;
-			someCount ++; 
-			
-			if (someCount > 3)
+			askUser();
+			JOptionPane.showMessageDialog(null, userInstrument);
+			if (instrumentsMade == 1)
 			{
-				isFinished = true; //ends the loop after one run
+				JOptionPane.showMessageDialog(null, "You've now made " + instrumentsMade + " instrument.");
 			}
+			else 
+			{
+				JOptionPane.showMessageDialog(null, "You've now made " + instrumentsMade + " instruments.");
+			}
+			
 		}
+		
+		
 		
 		//for (int index = 0; index < 10; index++) //starting value, condition, change
 		//{
