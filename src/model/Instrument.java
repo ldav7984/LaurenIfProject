@@ -16,7 +16,7 @@ public class Instrument //model
 	public Instrument()
 	{
 		this.numStrings = 0;
-		this.highestStringPitch = "a";
+		this.highestStringPitch = "A";
 		this.hasEndPin = false;
 		this.instrumentType = "violin";
 		
@@ -86,7 +86,6 @@ public class Instrument //model
 				+ "It must be a" + instrumentType + ". ";
 		return description;
 	}
-	
 	
 	
 	

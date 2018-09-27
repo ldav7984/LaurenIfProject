@@ -19,22 +19,23 @@ public class InstrumentController
 		//put this constructor's parameters in the parenthesis
 		userInstrument = new Instrument(); 
 		//constructor with no parameters
+		//parameters later filled with user input
 	}
 	
 	public void Start()
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
-		loopy();
+		LoopyLoop();
 		
 		
 		String userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
-		int numStrings = 0; //default value
+		//int numStrings = 0; //default value
 		//if(validInt(userInput))
 		//{
 		//	numStrings = Integer.parseInt(userInput);
 		//}
 		//userInstrument.setNumStrings(numStrings);
-		while(!validInt(userInput)) //if the user does not type in an integer
+		while(!validInt(userInput)) //every time the user does not type in an integer
 		{
 			userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		}
@@ -63,14 +64,15 @@ public class InstrumentController
 		
 		//instrumentType depends on what highestStringPitch is 
 		//and if it doesn't have 4 strings it defaults to unknown
-		userInput = JOptionPane.showInputDialog(null, "What is the pitch name of your instrument's highest string?");
+		userInput = JOptionPane.showInputDialog(null, "What is the pitch name of your instrument's highest string?"
+				+ " (Most likely A, E, or G)");
 		String highestStringPitch = userInput;
 		userInstrument.setHighestStringPitch(highestStringPitch);
 		boolean isCelloOrBass = false; //default value
 		isCelloOrBass = userInstrument.getHasEndPin();
 		if (userInstrument.getNumStrings() != 4) //if it does not have 4 strings
 		{
-			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
+			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 											+ userInstrument.getHighestStringPitch() + ". Your instrument is sure unusual!");
 		}
@@ -103,7 +105,7 @@ public class InstrumentController
 		}
 		else
 		{
-			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
+			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ". Your instrument is sure unusual!");
 		}
@@ -114,7 +116,7 @@ public class InstrumentController
 	} //end of Start() method
 	
 	//test the code
-	private void loopy()
+	private void LoopyLoop()
 	{
 		//define a variable before the loop
 		boolean isFinished = false;
@@ -140,11 +142,11 @@ public class InstrumentController
 	} //end of loopy() method
 	
 	
-	
-	public boolean validInt (String maybeInt)
+	//Method to call on when user needs to input an int
+	//It makes sure the user inputs an int
+	public boolean validInt (String maybeInt) 
 	{
-		boolean isValid = false;
-		
+		boolean isValid = false; //default value
 		try
 		{
 			Integer.parseInt(maybeInt);
@@ -156,6 +158,5 @@ public class InstrumentController
 		}
 		return isValid;
 	}
-	
 	
 }
