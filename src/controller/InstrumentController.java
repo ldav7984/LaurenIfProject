@@ -60,15 +60,14 @@ public class InstrumentController
 		JOptionPane.showMessageDialog(null, "It is " + userInstrument.getHasEndPin() 
 						+ " that your instrument has an end pin."); 
 		
-	
 		
-		//instrumentType depends on what highestStringPitch is
+		//instrumentType depends on what highestStringPitch is 
+		//and if it doesn't have 4 strings it defaults to unknown
 		userInput = JOptionPane.showInputDialog(null, "What is the pitch name of your instrument's highest string?");
 		String highestStringPitch = userInput;
 		userInstrument.setHighestStringPitch(highestStringPitch);
 		boolean isCelloOrBass = false; //default value
 		isCelloOrBass = userInstrument.getHasEndPin();
-		//isCellorOrBass = userInstrument.getHasEndPin();
 		if (userInstrument.getNumStrings() != 4) //if it does not have 4 strings
 		{
 			userInstrument.setInstrumentType("n unknown"); //n because it adds onto "it must be a"
@@ -156,9 +155,7 @@ public class InstrumentController
 			JOptionPane.showMessageDialog(null, "You need to type in a whole number.");
 		}
 		return isValid;
-		
 	}
-	
 	
 	
 }
