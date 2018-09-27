@@ -12,8 +12,7 @@ public class InstrumentController
 	private Instrument userInstrument; 
 	//instrument built by user input
 	
-	//constructors
-	public InstrumentController()
+	public InstrumentController() //constructors
 	{
 		myInstrument = new Instrument(4, "E", false, " violin"); 
 		//put this constructor's parameters in the parenthesis
@@ -22,7 +21,7 @@ public class InstrumentController
 		//parameters later filled with user input
 	}
 	
-	public void Start()
+	public void Start() //prints myInstrument and calls on the LoopyLoop() that calls on the askUser()
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		LoopyLoop();
@@ -30,7 +29,7 @@ public class InstrumentController
 		//JOptionPane.showMessageDialog(null, userInstrument);
 	} //end of Start() method
 	
-	public void askUser()
+	public void askUser() //sets parameters of userInstrument based on user input
 	{
 		String userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		//int numStrings = 0; //default value
@@ -61,7 +60,6 @@ public class InstrumentController
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
 				+ " (True/False)");
 		boolean hasEndPin = false; //default value
-		
 		hasEndPin = Boolean.parseBoolean(userInput);
 		userInstrument.setHasEndPin(hasEndPin);
 		JOptionPane.showMessageDialog(null, "It is " + userInstrument.getHasEndPin() 
@@ -100,7 +98,7 @@ public class InstrumentController
 				userInstrument.setInstrumentType(" viola");
 			}
 		}
-		else if (highestStringPitch.equalsIgnoreCase("E") && isCelloOrBass == false) //if the highest string is E and it is not a cellor or bass
+		else if (highestStringPitch.equalsIgnoreCase("E") && isCelloOrBass == false) //if the highest string is E and it is not a cello or bass
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ".");
@@ -118,12 +116,9 @@ public class InstrumentController
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
 		}
-
-	}//end of askUser() loop
+	}//end of askUser() method
 	
 	
-	
-	//test the code
 	private void LoopyLoop()
 	{
 		for (int instrumentsMade = 1; instrumentsMade <= 4; instrumentsMade ++)
@@ -132,14 +127,20 @@ public class InstrumentController
 			JOptionPane.showMessageDialog(null, userInstrument);
 			if (instrumentsMade == 1)
 			{
-				JOptionPane.showMessageDialog(null, "You've now made " + instrumentsMade + " instrument.");
+				JOptionPane.showMessageDialog(null, "You've now made " 
+									+ instrumentsMade + " instrument.");
 			}
-			else 
+			else if (instrumentsMade == 4)
 			{
-				JOptionPane.showMessageDialog(null, "You've now made " + instrumentsMade + " instruments.");
+				JOptionPane.showMessageDialog(null, "You've now made " 
+									+ instrumentsMade + " instruments. Goodbye.");
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "You've now made " 
+						+ instrumentsMade + " instruments.");
 			}
 		}
-		
 	} //end of LoopyLoop() method
 	
 	
@@ -152,7 +153,7 @@ public class InstrumentController
 			Integer.parseInt(maybeInt); //try to parse the input into an integer
 			isValid = true;
 		}
-		catch (NumberFormatException error) //if it can't parse it allows user to try again
+		catch (NumberFormatException error) //if it can't parse, it allows user to try again
 		{
 			JOptionPane.showMessageDialog(null, "You need to type in a whole number :)");
 		}
