@@ -60,11 +60,6 @@ public class InstrumentController
 		
 		userInput = JOptionPane.showInputDialog(null, "Does your instrument have an end pin?"
 				+ " (True/False)");
-		//while (userInput == null || !userInput.equalsIgnoreCase("True") || !userInput.equalsIgnoreCase("False"));
-		//{
-		//	userInput = JOptionPane.showInputDialog(null, "Type in 'true' or 'false.' "
-		//					+ "\nDoes your instrument have an end pin?");
-		//}
 		boolean hasEndPin = false; //default value
 		hasEndPin = Boolean.parseBoolean(userInput);
 		userInstrument.setHasEndPin(hasEndPin);
@@ -86,7 +81,9 @@ public class InstrumentController
 		while (userInput == null || userInput.equals(""))
 		{
 			userInput = JOptionPane.showInputDialog(null, "Type in something and don't press cancel." 
-					+ " What is the pitch name of your instrument's highest string?");
+					+ " \nWhat is the pitch name of your instrument's highest string?");
+			highestStringPitch = userInput;
+			userInstrument.setHighestStringPitch(highestStringPitch);
 		}
 		if (userInstrument.getNumStrings() != 4) //if it does not have 4 strings
 		{
