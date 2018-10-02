@@ -21,7 +21,8 @@ public class InstrumentController
 		//parameters later filled with user input
 	}
 	
-	public void Start() //prints myInstrument and calls on the LoopyLoop() that calls on the askUser()
+	public void Start() //prints myInstrument and calls on 
+	//LoopyLoop() which calls on the askUser()
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		LoopyLoop();
@@ -77,8 +78,8 @@ public class InstrumentController
 		String highestStringPitch = userInput;
 		userInstrument.setHighestStringPitch(highestStringPitch);
 		boolean isCelloOrBass = false; //default value
-		isCelloOrBass = userInstrument.getHasEndPin();
-		while (userInput == null || userInput.equals(""))
+		isCelloOrBass = userInstrument.getHasEndPin(); //if it has an end pin then isCelloOrBass is true
+		while (userInput == null || userInput.equals(""))  //as long as the user enters nothing or presses cancel
 		{
 			userInput = JOptionPane.showInputDialog(null, "Type in something and don't press cancel." 
 					+ " \nWhat is the pitch name of your instrument's highest string?");
@@ -87,7 +88,7 @@ public class InstrumentController
 		}
 		if (userInstrument.getNumStrings() != 4) //if it does not have 4 strings
 		{
-			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
+			userInstrument.setInstrumentType("n unknown"); //n so toString() prints "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
 		}
@@ -120,7 +121,7 @@ public class InstrumentController
 		}
 		else
 		{
-			userInstrument.setInstrumentType("n unknown"); //n so it reads "an unknown"
+			userInstrument.setInstrumentType("n unknown"); //n so toString() prints "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
 					+ userInstrument.getHighestStringPitch() + ". \nYour instrument is sure unusual!");
 		}
@@ -152,7 +153,7 @@ public class InstrumentController
 	} //end of LoopyLoop() method
 	
 	
-	//validation  to call on when user needs to input an integer
+	//validation to call on when user needs to input an integer
 	public boolean validInt (String maybeInt) 
 	{
 		boolean isValid = false; //default value
