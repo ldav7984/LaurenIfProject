@@ -21,11 +21,12 @@ public class InstrumentController
 		//parameters later filled with user input
 	}
 	
-	public void Start() //prints myInstrument and calls on 
-	//LoopyLoop() which calls on the askUser()
+	public void Start() 
+	//prints myInstrument and calls on 
+	//InstrumentLoop() which calls on the askUser()
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
-		LoopyLoop();
+		InstrumentLoop();
 		//askUser();
 		//JOptionPane.showMessageDialog(null, userInstrument);
 	} //end of Start() method
@@ -119,7 +120,7 @@ public class InstrumentController
 					+ userInstrument.getHighestStringPitch() + ".");
 			userInstrument.setInstrumentType("n upright bass");
 		}
-		else
+		else //if it's not any of those things above
 		{
 			userInstrument.setInstrumentType("n unknown"); //n so toString() prints "an unknown"
 			JOptionPane.showMessageDialog(null, "Your instrument's highest string pitch is " 
@@ -128,7 +129,7 @@ public class InstrumentController
 	}//end of askUser() method
 	
 	
-	private void LoopyLoop()
+	private void InstrumentLoop()
 	{
 		for (int instrumentsMade = 1; instrumentsMade <= 4; instrumentsMade ++)
 		{
@@ -150,11 +151,11 @@ public class InstrumentController
 						+ instrumentsMade + " instruments.");
 			}
 		}
-	} //end of LoopyLoop() method
+	} //end of InstrumentLoop() method
 	
 	
 	//validation to call on when user needs to input an integer
-	public boolean validInt (String maybeInt) 
+	public boolean validInt(String maybeInt) 
 	{
 		boolean isValid = false; //default value
 		try
@@ -167,6 +168,6 @@ public class InstrumentController
 			JOptionPane.showMessageDialog(null, "You need to type in a whole number and don't press cancel :)");
 		}
 		return isValid;
-	}
+	} //end of validInt()
 	
 }//end of InstrumentController class
