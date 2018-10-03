@@ -23,7 +23,7 @@ public class InstrumentController
 	
 	public void Start() 
 	//prints myInstrument and calls on 
-	//InstrumentLoop() which calls on the askUser()
+	//InstrumentLoop() which calls on askUser()
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		InstrumentLoop();
@@ -45,7 +45,8 @@ public class InstrumentController
 		{
 			userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		}
-		userInstrument.setNumStrings(Integer.parseInt(userInput)); //if input is an integer set it to the new numStrings count
+		userInstrument.setNumStrings(Integer.parseInt(userInput)); 
+		//if input is an integer set it to the new numStrings count
 		if (userInstrument.getNumStrings() == 4) //if it has 4 strings
 		{
 			JOptionPane.showMessageDialog(null, "Your instrument has " + userInstrument.getNumStrings()
