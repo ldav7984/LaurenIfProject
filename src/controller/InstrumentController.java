@@ -1,8 +1,8 @@
 package controller;
 
-import model.Instrument;
+import model.Instrument; 
 import javax.swing.JOptionPane;
-
+import java.util.ArrayList;
 
 public class InstrumentController
 {
@@ -153,6 +153,46 @@ public class InstrumentController
 			}
 		}
 	} //end of InstrumentLoop() method
+	
+	private void lotsOfInstruments()
+	{
+		//local variables are only visible in the method they are defined in!
+		//They only have SCOPE to that method (this method)
+		
+		ArrayList<Instrument> myInstruments = new ArrayList<Instrument>();
+		
+		Instrument sampleInstrument = new Instrument();
+		Instrument otherInstrument = new Instrument();
+		
+		//Can add something more than once - sampleInstrument was made once but added twice 
+		//(example if you have 2 instruments - but not very helpful)
+		myInstruments.add(sampleInstrument); //at 0
+		myInstruments.add(sampleInstrument); //at 1
+		myInstruments.add(otherInstrument);  //at 3
+		
+		//standard forward loop - goes through list beginning to end
+		//index starts at 00, .size tells how many things are, index goes up by 1 each time
+		for (int index = 0; index < myInstruments.size(); index += 1) 
+		{
+			
+		}
+		
+		//standard backward loop - goes through list end to beginning
+		for (int index = myInstruments.size() - 1; index >= 0; index -= 1)
+		{
+			
+		}
+		
+		//for each loop
+		//can't remove and can't replace
+		for (Instrument current : myInstruments)
+		{
+			JOptionPane.showMessageDialog(null, "The instrument is a " + current.getInstrumentType() + ".");
+		} //current variable no longer exists after this bracket 
+		//it can't be removed or replaced (no =), only modified with methods
+		
+		
+	} //end of lotsOfInstruments() method
 	
 	
 	//validation to call on when user needs to input an integer
