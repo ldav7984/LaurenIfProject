@@ -201,11 +201,11 @@ public class InstrumentController
 		
 		//for each loop
 		//can't remove and can't replace
-		//for (Instrument current : myInstruments)
-		//{
-		//	JOptionPane.showMessageDialog(null, "The instrument is a " + current.getInstrumentType() + ".");
+		for (Instrument current : myInstruments)
+		{
+			JOptionPane.showMessageDialog(null, "The instrument is a " + current.getInstrumentType() + ".");
 		
-		//} //current variable no longer exists after this bracket 
+		} //current variable no longer exists after this bracket 
 		//it can't be removed or replaced (no =), only modified with methods
 		
 		
