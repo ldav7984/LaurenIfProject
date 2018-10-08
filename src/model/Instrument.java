@@ -6,6 +6,7 @@ public class Instrument //model
 	private String highestStringPitch;
 	private Boolean hasEndPin;
 	private String instrumentType;
+	private int numInstruments;
 	
 	
 	/**
@@ -57,6 +58,11 @@ public class Instrument //model
 		return instrumentType;
 	}
 	
+	public int getNumInstruments() //getter
+	{
+		return numInstruments;
+	}
+	
 	public void setNumStrings(int numStrings) //setter
 	{
 		this.numStrings = numStrings;
@@ -75,6 +81,11 @@ public class Instrument //model
 	public void setInstrumentType(String instrumentType) //setter
 	{
 		this.instrumentType = instrumentType;
+	}
+	
+	public void setNumInstruments(int numInstruments) //setter
+	{
+		this.numInstruments = numInstruments;
 	}
 	
 	public String toString() //lets us print out information about any object

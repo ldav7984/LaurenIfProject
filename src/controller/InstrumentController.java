@@ -27,6 +27,7 @@ public class InstrumentController
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		InstrumentLoop();
+		lotsOfInstruments();
 		//askUser();
 		//JOptionPane.showMessageDialog(null, userInstrument);
 	} //end of Start() method
@@ -154,11 +155,11 @@ public class InstrumentController
 		}
 	} //end of InstrumentLoop() method
 	
+	
 	private void lotsOfInstruments()
 	{
 		//local variables are only visible in the method they are defined in!
 		//They only have SCOPE to that method (this method)
-		
 		ArrayList<Instrument> myInstruments = new ArrayList<Instrument>();
 		
 		Instrument sampleInstrument = new Instrument();
@@ -168,20 +169,35 @@ public class InstrumentController
 		//(example if you have 2 instruments - but not very helpful)
 		myInstruments.add(sampleInstrument); //at 0
 		myInstruments.add(sampleInstrument); //at 1
-		myInstruments.add(otherInstrument);  //at 3
+		myInstruments.add(otherInstrument);  //at 2
+		myInstruments.add(3, otherInstrument); 
+		myInstruments.remove(2);
+		
 		
 		//standard forward loop - goes through list beginning to end
-		//index starts at 00, .size tells how many things are, index goes up by 1 each time
+		//index starts at 0, .size tells how many things are, index goes up by 1 each time
+		//If used to remove values you have to change index -=1
 		for (int index = 0; index < myInstruments.size(); index += 1) 
 		{
+			//good for display, or minor changes
+			myInstrument.setNumInstruments(myInstruments.size());
+			JOptionPane.showMessageDialog(null, "There are " 
+			+ myInstrument.getNumInstruments() + " instruments.");
+			JOptionPane.showMessageDialog(null, "This is instrument #" + index + ".");
+			//myInstruments.setNumInstruments().get(index);
 			
+			//good to remove, replace, or change multiple values
+			//Instrument currentInstrument = myInstruments.get(index);
+			//JOptionPane.showMessageDialog(null, "This is instrument #" + index + ".");
+			//currentInstrument.set
 		}
 		
 		//standard backward loop - goes through list end to beginning
-		for (int index = myInstruments.size() - 1; index >= 0; index -= 1)
-		{
+		//great for removing values!
+		//for (int index = myInstruments.size() - 1; index >= 0; index -= 1)
+		//{
 			
-		}
+		//}
 		
 		//for each loop
 		//can't remove and can't replace
