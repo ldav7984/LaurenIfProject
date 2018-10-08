@@ -27,7 +27,7 @@ public class InstrumentController
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		InstrumentLoop();
-		lotsOfInstruments();
+		//lotsOfInstruments();
 		//askUser();
 		//JOptionPane.showMessageDialog(null, userInstrument);
 	} //end of Start() method
@@ -170,8 +170,8 @@ public class InstrumentController
 		myInstruments.add(sampleInstrument); //at 0
 		myInstruments.add(sampleInstrument); //at 1
 		myInstruments.add(otherInstrument);  //at 2
-		myInstruments.add(3, otherInstrument); 
-		myInstruments.remove(2);
+		myInstruments.add(3, otherInstrument);  //at 3
+		myInstruments.remove(2); //2 has been removed, the rest slide down
 		
 		
 		//standard forward loop - goes through list beginning to end
@@ -180,9 +180,9 @@ public class InstrumentController
 		for (int index = 0; index < myInstruments.size(); index += 1) 
 		{
 			//good for display, or minor changes
-			myInstrument.setNumInstruments(myInstruments.size());
-			JOptionPane.showMessageDialog(null, "There are " 
-			+ myInstrument.getNumInstruments() + " instruments.");
+			//myInstrument.setNumInstruments(myInstruments.size());
+			//JOptionPane.showMessageDialog(null, "There are " 
+			//+ myInstrument.getNumInstruments() + " instruments.");
 			JOptionPane.showMessageDialog(null, "This is instrument #" + index + ".");
 			//myInstruments.setNumInstruments().get(index);
 			
@@ -201,10 +201,11 @@ public class InstrumentController
 		
 		//for each loop
 		//can't remove and can't replace
-		for (Instrument current : myInstruments)
-		{
-			JOptionPane.showMessageDialog(null, "The instrument is a " + current.getInstrumentType() + ".");
-		} //current variable no longer exists after this bracket 
+		//for (Instrument current : myInstruments)
+		//{
+		//	JOptionPane.showMessageDialog(null, "The instrument is a " + current.getInstrumentType() + ".");
+		
+		//} //current variable no longer exists after this bracket 
 		//it can't be removed or replaced (no =), only modified with methods
 		
 		
