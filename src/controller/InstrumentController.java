@@ -200,7 +200,7 @@ public class InstrumentController
 		//}
 		
 		//for each loop
-		//can't remove and can't replace
+		//can't remove and can't replace - good for .get .set and printing
 		for (Instrument current : myInstruments)
 		{
 			JOptionPane.showMessageDialog(null, "The instrument is a " + current.getInstrumentType() + ".");
