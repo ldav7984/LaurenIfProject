@@ -12,7 +12,12 @@ public class InstrumentController
 	private Instrument userInstrument; 
 	//instrument built by user input
 	
-	public InstrumentController() //constructors
+	/**
+	 * Constructs two new instances of Instrument, 
+	 * one with parameters in the parenthesis 
+	 * and one with parameters input by the user.
+	 */
+	public InstrumentController() 
 	{
 		myInstrument = new Instrument(4, "E", false, " violin"); 
 		//put this constructor's parameters in the parenthesis
@@ -21,9 +26,11 @@ public class InstrumentController
 		//parameters later filled with user input
 	}
 	
-	public void Start() 
-	//prints myInstrument and calls on 
-	//InstrumentLoop() which calls on askUser()
+	/**
+	 * Print myInstrument and calls on
+	 * InstrumentLoop(), which calls on askUser()
+	 */
+	public void Start()
 	{
 		JOptionPane.showMessageDialog(null, myInstrument);
 		InstrumentLoop();
@@ -32,7 +39,10 @@ public class InstrumentController
 		//JOptionPane.showMessageDialog(null, userInstrument);
 	} //end of Start() method
 	
-	public void askUser() //sets parameters of userInstrument based on user input
+	/**
+	 * Sets parameter values for userInstruments based on user input.
+	 */
+	public void askUser() 
 	{
 		String userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		//int numStrings = 0; //default value
@@ -41,8 +51,11 @@ public class InstrumentController
 		//	numStrings = Integer.parseInt(userInput);
 		//}
 		//userInstrument.setNumStrings(numStrings);
+		
+		
+		//Every time the user does not type anything at all, 
+		//types an invalid integer, or presses cancel, this loop is run
 		while(userInput == null || !validInt(userInput) || userInput.equals("")) 
-		//every time the user does not type anything at all or a valid integer or presses cancel
 		{
 			userInput = JOptionPane.showInputDialog(null, "How many strings does your instrument have?");
 		}
@@ -130,7 +143,10 @@ public class InstrumentController
 		}
 	}//end of askUser() method
 	
-	
+	/**
+	 * Keeps track of how many Instruments 
+	 * have been made and tells the user.
+	 */
 	private void InstrumentLoop()
 	{
 		for (int instrumentsMade = 1; instrumentsMade <= 4; instrumentsMade ++)
@@ -145,7 +161,7 @@ public class InstrumentController
 			else if (instrumentsMade == 4)
 			{
 				JOptionPane.showMessageDialog(null, "You've now made " 
-									+ instrumentsMade + " instruments. Goodbye.");
+									+ instrumentsMade + " instruments.");
 			}
 			else
 			{
@@ -160,6 +176,10 @@ public class InstrumentController
 	{
 		//local variables are only visible in the method they are defined in!
 		//They only have SCOPE to that method (this method)
+		
+		/**
+		 * s
+		 */
 		ArrayList<Instrument> myInstruments = new ArrayList<Instrument>();
 		
 		Instrument sampleInstrument = new Instrument();
@@ -212,7 +232,12 @@ public class InstrumentController
 	} //end of lotsOfInstruments() method
 	
 	
-	//validation to call on when user needs to input an integer
+	
+	/**
+	 * Tests if something is a valid integer
+	 * @param maybeInt   String that could possibly be an integer
+	 * @return isValid   Is it a valid integer
+	 */
 	public boolean validInt(String maybeInt) 
 	{
 		boolean isValid = false; //default value

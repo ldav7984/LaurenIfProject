@@ -88,12 +88,15 @@ public class Instrument //model
 		this.numInstruments = numInstruments;
 	}
 	
+	/**
+	 * Description of the object based on the parameters given.
+	 */
 	public String toString() //lets us print out information about any object
 	{
 		String description = "This instrument has " + numStrings + " strings. "
 				+ "\nThe pitch of its highest string is " + highestStringPitch + ". "
 				+ "\nIt is " + hasEndPin + " that it has an end pin. "
-				+ "\nIt must be a" + instrumentType + ". ";
+				+ "\nIt is probably a" + instrumentType + ". ";
 		return description;
 	}
 	
