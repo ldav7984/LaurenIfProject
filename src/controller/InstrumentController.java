@@ -177,9 +177,7 @@ public class InstrumentController
 		//local variables are only visible in the method they are defined in!
 		//They only have SCOPE to that method (this method)
 		
-		/**
-		 * s
-		 */
+	
 		ArrayList<Instrument> myInstruments = new ArrayList<Instrument>();
 		
 		Instrument sampleInstrument = new Instrument();
