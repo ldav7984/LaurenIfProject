@@ -19,7 +19,9 @@ public class InstrumentController
 	 */
 	public InstrumentController() 
 	{
-		myInstrument = new Instrument(4, "E", false, " violin"); 
+		myInstrument = new Instrument(4, "E", false, " violin");
+		
+		myInstrument = new Instrument(4, "E", false, "Violin");
 		//put this constructor's parameters in the parenthesis
 		userInstrument = new Instrument(); 
 		//this constructor has no parameters
@@ -190,7 +192,6 @@ public class InstrumentController
 		myInstruments.add(otherInstrument);  //at 2
 		myInstruments.add(3, otherInstrument);  //at 3
 		myInstruments.remove(2); //2 has been removed, the rest slide down
-		
 		
 		//standard forward loop - goes through list beginning to end
 		//index starts at 0, .size tells how many things are, index goes up by 1 each time
